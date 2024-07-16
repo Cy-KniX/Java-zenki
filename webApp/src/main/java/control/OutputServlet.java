@@ -24,7 +24,7 @@ public class OutputServlet extends HttpServlet {
 		String nameStr = (String) request.getAttribute("name");
 		String passwordStr = (String) request.getAttribute("password");
 		String genderStr = (String) request.getAttribute("gender");
-		String foodStr = (String) request.getAttribute("food");
+		String majorStr = (String) request.getAttribute("major");
 		String hobbyStr = (String) request.getAttribute("hobby");
 		
 		// レスポンスのコンテンツタイプおよびエンコーディング方式を指定
@@ -46,7 +46,7 @@ public class OutputServlet extends HttpServlet {
 		out.println("    " + nameStr + "<br><br>                     ");
 		out.println("    " + passwordStr + "<br><br>                 ");
 		out.println("    " + genderStr + "<br><br>                   ");
-		out.println("    " + foodStr + "<br><br>                     ");
+		out.println("    " + majorStr + "<br><br>                    ");
 		out.println("    " + hobbyStr + "<br><br>                    ");
 		out.println("<br><a href=\"index.html\">入力フォームへ</a>     ");
 		out.println("<br><br><br>------これは、OutputServletで書き出しています。------");

@@ -27,23 +27,23 @@ public class InputServlet extends HttpServlet {
 		String nameStr = "【名前】" + request.getParameter("name");
 		String passwordStr = "【パスワード】" + request.getParameter("password");
 		String genderStr = "【性別】" + request.getParameter("gender");
-		String[] foodArray = request.getParameterValues("food");
-		String foodStr = "【好物】";
+		String[] majorArray = request.getParameterValues("major");
+		String majorStr = "【専攻】";
+		String hobbyStr = "【趣味】";
 	
-		if (foodArray != null) {
-			for (String food : foodArray) {
-				foodStr += (food + "　");
+		if (majorArray != null) {
+			for (String major : majorArray) {
+				majorStr += (major + "　");
 			}
 		} else {
-			foodStr += "(未選択)";
+			majorStr += "(未選択)";
 		}
-		String hobbyStr = "【趣味】" + request.getParameter("hobby");
 
 		// リクエストスコープへのデータ格納
 		request.setAttribute("name", nameStr);
 		request.setAttribute("password", passwordStr);
 		request.setAttribute("gender", genderStr);
-		request.setAttribute("food", foodStr);
+		request.setAttribute("major", majorStr);
 		request.setAttribute("hobby", hobbyStr);
 		
 		// 転送オブジェクトを取得
