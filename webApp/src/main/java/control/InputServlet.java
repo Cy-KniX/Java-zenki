@@ -27,18 +27,9 @@ public class InputServlet extends HttpServlet {
 		String nameStr = "【名前】" + request.getParameter("name");
 		String passwordStr = "【パスワード】" + request.getParameter("password");
 		String genderStr = "【性別】" + request.getParameter("gender");
-		String[] majorArray = request.getParameterValues("major");
-		String majorStr = "【専攻】";
-		String hobbyStr = "【趣味】";
+		String majorStr = "【専攻】" + request.getParameter("major");
+		String hobbyStr = "【趣味】" + request.getParameter("hobby");
 	
-		if (majorArray != null) {
-			for (String major : majorArray) {
-				majorStr += (major + "　");
-			}
-		} else {
-			majorStr += "(未選択)";
-		}
-
 		// リクエストスコープへのデータ格納
 		request.setAttribute("name", nameStr);
 		request.setAttribute("password", passwordStr);
